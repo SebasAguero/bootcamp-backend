@@ -77,3 +77,25 @@ persona = {
   'hobbies': ['Programar', 'Estudiar', 'Montar Bici']
 }
 print(persona['nombre'])
+
+#Agregar elementos
+persona['idiomas'] = ('Español', 'Ingles', 'Quechua')
+
+#Editar un elemento
+persona['estado'] = 'Soltero'
+
+#Eliminar un elemento
+persona.pop('nacionalidad')
+del persona['estado']
+
+print(persona)
+
+#Llaves del diccionario
+print(persona.keys())
+print(persona.values())
+
+#Obtener la calle
+print(persona['direccion']['calle'])
+
+#Obtener los dos últimos hobbies
+print(persona['hobbies'][-2:])
