@@ -99,3 +99,14 @@ print(persona['direccion']['calle'])
 
 #Obtener los dos últimos hobbies
 print(persona['hobbies'][-2:])
+
+#set (Conjuntos)
+#Diccionario sin orden
+planetas = {'Tierra', 'Marte', 'Venus', 'Júpiter', 'Urano'}
+
+planetas.add('Pluton')
+print(planetas)
+
+#Tener la información almacenada para corroborar
+print('Neptuno' in planetas)
+print('Tierra' in planetas)
