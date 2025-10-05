@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block titulo %}
+Inicio Flask
+{% endblock %}
+{% block contenido %}
+<p>Hola a todos desde flask al grupo {{nombre or "No hay grupo todavía"}}!</p>
+
+{% if categorias %}
+<table class="min-w-full border border-gray-200 text-sm">
+        <thead class="bg-gray-100">
+            <th class="px-4 py-2 text-left font-semibold text-gray-700">id</th>
+            <th class="px-4 py-2 text-left font-semibold text-gray-700">nombre</th>
+            <th class="px-4 py-2 text-left font-semibold text-gray-700">orden</th>
+        </thead>
+        <tbody>
+            {# https://jinja.palletsprojects.com/en/stable/templates/#for #}
+            {% for categoria in categorias %}
+                <tr class="hover:bg-gray-50">
+                
+                    {% if categoria.deletedAt == None %}
+                    <td class="px-4 py-2 border-t">{{ categoria.id }}</td>
+                        <td class="px-4 py-2 border-t">{{ categoria.nombre }}</td>
+                        <td class="px-4 py-2 border-t">{{ categoria.orden }}</td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <span>No hay datos que mostrar</span>
+{% endif %}
+
+{% endblock %}
