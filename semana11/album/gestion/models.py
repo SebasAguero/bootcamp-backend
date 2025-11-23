@@ -24,7 +24,7 @@ class Recuerdo(models.Model):
 class Archivo(models.Model):
     id = models.UUIDField(default=uuid4, primary_key=True, editable=False)
     key = models.TextField(unique=True)
-    path = models.TextField()
+    path = models.TextField(null=True)
     extension = models.TextField()
     contentType = models.TextField(db_column='content_type')
 
